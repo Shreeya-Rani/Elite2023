@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,400&display=swap');
+
+body{
+    margin: 0;
+    padding:0;
+    background-color: #16213E;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+/* ------------Nav Bar------------------  */
+
+.navigation{
+    background-color: #0F3460;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    margin: 20px;
+    font-weight: 600;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background-color: #fff;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.links .fill{
+    color: #16213E;
+    background-color: #fff;
+}
+
+.links a{
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 15px 10px 15px;
+    border: 2px solid #fff;
+    border-radius: 10px;
+    margin: 5px;
+    font-weight: 600;
+}
+
+/* --------------Hero Section-----------------  */
+
+.hero{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 60vh;
+}
+
+.hero-txt{
+    margin-left: 30px;
+    width: 40vw;
+
+}
+
+.hero-txt h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+}
+.hero-txt p{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.hero-txt a{
+    padding: 10px 25px 10px 25px;
+    background-color: #E94560;
+    color: #16213E;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: 'Montserrat';
+    font-weight: 700;
+}
+
+/* ------------------Items List--------------  */
+
+.items-list{
+    display: flex;
+    margin: auto;
+    width: 60vw;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.list-item {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+  }
+
+.item-img{
+    background-color: #533483;
+    width: 6vw;
+    padding: 20px;
+    border-radius: 100%;
+  }
+
+.item-img img{
+    width: 100%;
+}
+
+/* -------------- Details Section ---------------------  */
+
+.details{
+    height: 30vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.top-bar{
+    background-color: #E94560;
+    height: 15px;
+    border-radius: 10px 10px 0 0;
+}
+.detail-box{
+    background-color: #0F3460;
+    box-shadow: 2px 2px 10px 3px #13131342;
+    border-radius: 10px;
+    width: 20vw;
+}
+
+.detail-box p{
+    text-align: center;
+}
+
+/* ---------------Responsiveness--------------- */
+.mobile-nav{
+    display: none;
+}
+@media only screen and (max-width: 600px) {
+    .hero{
+        flex-direction: column;
+        height: auto;
+    }
+    .details{
+        height: auto;
+    }
+    .hero-txt{
+        width: 90vw;
+        margin: 0;
+    }
+    .item-img{
+        width: 70%;
+    }
+    .detail-box{
+        width: 70vw;
+        margin: 10px;
+    }
+
+    .nav-bar, .links{
+        display: none;
+    }
+    .mobile-nav{
+        display: block;
+    }
+
+    .mobile-nav .fa-solid{
+        display: block;
+        font-size: 30px;
+        margin-right: 25px;
+    }
+    .mobile-nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        margin: 0;
+    }
+
+    .mobile-nav ul{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: -300px;
+        top: 0;
+        margin: 0;
+        background-color: #533483;
+        height: 100vh;
+        justify-content: center;
+        width: 40vw;
+        color: #fff;
+        transition: 0.5s right;
+    }
+
+    .mobile-nav ul li a{
+        color: #fff;
+    }
+    .mobile-nav ul li{
+        margin: 10px;
+    }
+    .items-list{
+        flex-direction: column;
+    }
+}
+
+

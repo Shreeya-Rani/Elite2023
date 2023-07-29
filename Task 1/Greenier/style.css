@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,500;0,600;0,700;1,300&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --clr-primary: #098e4d;
+    --clr-primary-light: #b2fdd9;
+}
+
+/* ------------ Nav bar ----------------  */
+.navigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    margin-left: 20px;
+}
+
+.logo h1{
+    font-weight: 700;
+   
+}
+
+span{
+    color: var(--clr-primary)
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+}
+
+nav ul li{
+    margin: 10px;
+    font-size: 20px;
+}
+
+nav ul li a{
+    color: #333;
+    text-decoration: none;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: '';
+    width: 0%;
+    position: absolute;
+    height: 2px;
+    left: 0;
+    bottom: 0;
+    background-color: var(--clr-primary);
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.links{
+    margin-right: 20px;
+}
+.links .fill{
+    color: #fff; 
+    background-color: #333;
+}
+
+.links a{
+    text-decoration: none;
+    color: #333;
+    border: 2px solid #333;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.links a:hover{
+    box-shadow: 2px 5px 10px #3333335b;
+}
+
+/* ------------Hero Section ------------- */
+.hero{
+    height: 60vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.hero-img img{
+    width: 450px;
+    height: auto;
+}
+
+.hero-txt h3{
+    font-size: 30px;
+}
+
+.socials i{
+    font-size: 40px;
+    margin: 10px;
+}
+
+.socials a{
+    color: #333;
+    transition: 0.3s;
+}
+
+.socials a:hover{
+    color: var(--clr-primary);
+}
+
+/* -------------About Section-------------  */
+.about, .my-team{
+    height: 65vh;
+    margin: 20px 0px 100px 0px;
+}
+.title h1{
+    font-size: 40px;
+    font-weight: 600;
+    text-align: center;
+
+}
+.about-content{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+
+}
+
+.about-img{
+    width: 30vw;
+    margin: auto;
+}
+
+.about-img img{
+    width: 100%;
+}
+
+.about-txt{
+    width: 50vw;
+}
+
+.about-txt h4{
+    font-size: 30px;
+}
+
+/* Misison and Visison */
+.mis-vis{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 50vh;
+}
+
+.sub-title h1{
+    font-size: 30px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.mis-vis-cnt{
+    width: 40vw;
+}
+
+/* ------------- Team Section -------------  */
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.member{
+    width: 15vw;
+}
+
+.member img{
+    border-radius: 100%;
+    width: 100%;
+}
+
+.member h3, .member h4{
+    text-align: center;
+    margin: 2px;
+}
+
+/* ---------- Contact Section ---------------  */
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form .submit{
+    background-color: var(--clr-primary);
+    width: 10vw;
+}
+
+.form input{
+    width: 40vw;
+    font-size: 20px;
+    border: 2px solid #5b5a5a;
+    border-radius: 5px;
+    margin: 10px;
+    height: 40px;
+    transition: 0.5s;
+    outline: none;
+}
+
+.form input:focus{
+    border: 2px solid #131313;
+}
+
+/* --------- Footer ------------  */
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 60px 0px 20px 0px;
+}
+
+footer p{
+    margin: 0;
+}
+
+footer a{
+    text-decoration: none;
+    color: var(--clr-primary);
+}
+
+/* -----------Responsiveness for Smaller Screens--------------  */
+
+.mobile-nav{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+    .nav-bar, .links{
+        display: none;
+    }
+    .mobile-nav{
+        display: block;
+    }
+
+    .mobile-nav .fa-solid{
+        display: block;
+        font-size: 30px;
+        margin-right: 25px;
+    }
+    .mobile-nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        margin: 0;
+    }
+
+    .mobile-nav ul{
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        right: -300px;
+        top: 0;
+        margin: 0;
+        background-color: var(--clr-primary);
+        height: 100vh;
+        justify-content: center;
+        width: 40vw;
+        color: #fff;
+        transition: 0.5s right;
+    }
+
+    .mobile-nav ul li a{
+        color: #fff;
+    }
+
+    .logo h1{
+        font-size: 30px;
+    }
+
+    .hero{
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-txt h3 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .socials i {
+        font-size: 30px;
+        margin: 5px;
+    }
+
+    .socials{
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-img img{
+        width: 90vw;
+    }
+
+    .about, .mis-vis, .my-team{
+        height: auto;
+        margin: auto;
+    }
+
+    .about-content, .mis-vis, .container{
+        flex-direction: column;
+    }
+    .about-img, .about-txt, .mis-vis-cnt, .form input{
+        width: 90vw;
+    }
+
+    .member, .form .submit{
+        width: 50vw;
+        margin: 10px;
+    }
+
+    footer p{
+        text-align: center;
+    }
+}

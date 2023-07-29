@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,700;1,400&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--clr-primary);
+    background-color: #E1ECE1;
+
+}
+
+:root{
+
+    --clr-primary: #465C46;
+    --clr-secondary: #FFCC00;
+
+}
+
+/* -------Nav Bar---------- */
+.navigation{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--clr-primary);
+    height: 8vh;
+}
+
+.navigation .logo{
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 35px;
+    color: #fff;
+    border: none;
+}
+
+.logo span{
+    color: var(--clr-secondary);
+}
+
+input{
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--clr-primary);
+    width: 30vw;
+    height: 10px;
+    border: none;
+
+}
+
+.navigation a{
+    text-decoration: none;
+    color: #fff;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 6px 12px;
+    border-color: #fff;
+    font-size: 13px;
+}
+
+.navigation .fill{
+    background-color: #fff;
+    color: var(--clr-primary);
+}
+
+.links{
+    width: 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* -----------Header Section--------------- */
+.hero{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 60vh;
+    margin: 30px;
+}
+
+.hero-txt{
+    width: 40vw;
+}
+
+.hero-txt h1{
+    font-family: Poppins;
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 75px;
+    margin-bottom: 0;
+}
+
+.hero-txt p{
+    margin-top:0;
+}
+
+.hero-txt a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    font-size: 20px;
+    background-color: var(--clr-secondary);
+    padding: 6px 30px;
+    border-radius: 10px;
+}
+
+/* ----------------Cuisines----------------- */
+
+.cuisine{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+.cuisine .title h1{
+    font-weight: 700;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80vw;
+    margin: auto;
+}
+
+.cuisine-box{
+ 
+    width: 27%;
+    border-radius: 15px;
+    background-color: #fff;
+    box-shadow: 0px 0px 4px 4px #33333331;
+}
+
+.cuisine-box img{
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0px 0px;
+}
+
+.cuisine-box h4{
+    margin: 0;
+    text-align: center;
+}
+
+.cuisine-box p{
+    margin-top: 0;
+    text-align: center;
+}
+
+.title{
+    width: 80vw;
+    margin: auto;
+
+}
+
+/* -------------footer------------ */
+footer{
+    margin-top: 30px;
+    background-color: var(--clr-primary);
+    color: #fff;
+}
+
+footer p{
+    margin: 0;
+    text-align: center;
+    padding: 10px
+}
+
+
+/* ------------------Responsiveness for Mobile Phones----------------------  */
+
+@media only screen and (max-width: 600px) {
+    .hero-txt {
+        width: 90vw;
+        margin: 20px;
+      }
+
+    .hero-img {
+        width: 90vw;
+    }
+    .hero-img img {
+        width: 100%;
+    }
+    .hero{
+        flex-direction: column;
+        height: auto;
+        margin: 0;
+    }
+    .cuisine-box{
+        width: 100%;
+        margin: 10px;
+    }
+    .navigation .logo{
+        font-size: 25px;
+    }
+    .links {
+        position: fixed;
+        background-color: var(--clr-secondary);
+        top: 0;
+        right: -300px;
+        width: 40vw;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s right;
+    }
+    .navigation .links i{
+        font-size: 25px;
+        top: 25px;
+        left: 25px;
+        position: absolute;
+    }
+    .navigation a{
+        color: #465C46;
+        border: none;
+        font-size: 20px;
+        padding: 2px;
+        margin: 5px;
+    }
+    .navigation .fill{
+        background-color: #fff0;
+    }
+
+    .navigation i{
+        color: #fff;
+        font-size: 20px;
+    }
+}
