@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Practice</title>
+    <style>
+        form{
+            display: flex;
+            flex-direction: column;
+            width: 40vw;
+            justify-content: center;
+            margin: auto;
+            
+        }
+        input, textarea{
+            margin: 10px;
+            padding: 10px;
+            color: #333;
+            border-radius: 10px;
+            border: none;
+            background-color: bisque;
+        }
+        #notification{
+            position: relative;
+        }
+        #notification::after{
+            content: 'Would you like to recieve Notifications?';
+            position: absolute;
+            left: 30%;
+            bottom: 15px;
+        }
+        button{
+            padding: 12px;
+            border-radius: 15px;
+            background-color: rgb(206, 60, 60);
+            color: #fff;
+            width: 50%;
+            align-self: center;
+        }
+    </style>
+</head>
+<body>
+
+    <form name="submit-to-google-sheet" id="submission-form">
+        <input type="text" name="Name" placeholder="Your Name" id="name" required>
+        <input type="email" name="Email" placeholder="Your Email" id="email" required>
+        <input type="date" name="DoB" placeholder="Add Your Date of Birth" id="dob" required>
+        <textarea name="Information" rows="6" placeholder="Tell us about yourself" id="info" required></textarea>
+        <textarea name="Achievements" rows="6" placeholder="Tell us something about your Achievements" id="achievements"></textarea>
+        <input type="number" name="Grade" min="1" max="12" placeholder="Enter Your Class (eg. 11 or 6, etc.)" id="grade" required>
+        <input id="notification" type="radio" name="Notifications" value='off'>
+        <button type="submit" onclick="submitForm()">Submit</button>
+    </form>
+    
+</body>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbw1Kojxlg_WGe6liDwZglDvn0tv4drMwHMEKrLWqKqTUDuRoSPU6_I1heZdU1wxJvtf/exec'
+    const form = document.forms['submit-to-google-sheet']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+  <script>
+    let submissionForm = document.getElementById("submission-form");
+
+    submissionForm.addEventListener('submit', ()=>{
+        var name = document.getElementById('name').value;
+        var email = document.getElementById('email').value;
+        var dob = document.getElementById('dob').value;
+        var information = document.getElementById('info').value;
+        var achievements = document.getElementById('achievements').value;
+        var grade = document.getElementById('grade').value;
+        var notification = document.getElementById('notification').value;
+
+       
+        console.log(notification);
+        
+        alert('Form Submitted \n' + 'Name: ' + name + '\n Email: ' + email + '\n Date of Birth: ' + dob + '\n About you: ' + information + '\n Class: ' + grade + '\n Notifications: ' + notification);
+    })
+
+  </script>
+</html>
